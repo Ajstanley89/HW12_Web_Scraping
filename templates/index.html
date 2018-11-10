@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars Info</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <h1>Mars Facts</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Update Data</a></p>
+    </div>
+
+    <!-- Mars Data -->
+    <div class="row" id="news">
+      <div class="col-md-12">
+        <h2 class="heading">Latest News From Mars</h2>
+        <h4>{{mars.newsTitle}}</h4>
+        <p>{{mars.newsTeaser}}</p>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-md-8'>
+        <h2>Featured Image</h2>
+        <img src={{mars.featImg}} width='700' height='auto'>
+      </div>
+      <div class='col-md'>
+        <h4>Martian Weather</h4>
+        <p>{{mars.marsTweet}}</p>
+        {{ mars.marsFacts | safe }}
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
+
