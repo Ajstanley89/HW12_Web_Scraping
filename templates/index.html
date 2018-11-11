@@ -6,12 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mars Info</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 </head>
 
-<body>
+<body class='bg-light'>
   <div class="container">
-
     <div class="jumbotron text-center">
       <h1>Mars Facts</h1>
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Update Data</a></p>
@@ -39,6 +40,7 @@
         </div>
       </div>
     </div>
+    <br>
     <!--Hemisphere Pictures section-->
     <div class='row' id ='hemisphere title'>
       <div class = 'col-md-12'>
@@ -47,14 +49,15 @@
     </div>
     <div class = 'row' id='hemisphere pics'>
       <div class = 'col-md-12'>
-        <ul>
-          {% for img in mars.marsHemisphereImgs %}
-          <li>
-            <img src={{img.img_url}} class='figure-img'>
-            <figcaption class="figure-caption">{{img.title}}</figcaption>
-          </li>
-          {% endfor %}
-        </ul>
+         {% for img in mars.marsHemisphereImgs %}
+         <div class="card mx-auto" style="width: 50rem;">
+            <img class="card-img-top" src={{img.img_url}} alt="Mars">
+            <div class="card-body">
+              <p class="card-text text-center">{{img.title}}</p>
+            </div>
+          </div>
+          <br>
+        {% endfor %}
       </div>
     </div>
   </div>
