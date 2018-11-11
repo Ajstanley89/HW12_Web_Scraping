@@ -31,14 +31,36 @@
         <img src={{mars.featImg}} width='700' height='auto'>
       </div>
       <div class='col-md'>
-        <h4>Martian Weather</h4>
+        <h2>Martian Weather</h2>
         <p>{{mars.marsTweet}}</p>
-        {{ mars.marsFacts | safe }}
+        <div>
+          <h2>Fun Mars Facts</h2>
+          {{ mars.marsFacts | safe }}
+        </div>
       </div>
     </div>
-
+    <!--Hemisphere Pictures section-->
+    <div class='row' id ='hemisphere title'>
+      <div class = 'col-md-12'>
+        <h2 class = 'text-center'>Martian Hemispheres</h2>
+      </div>
+    </div>
+    <div class = 'row' id='hemisphere pics'>
+      <div class = 'col-md-12'>
+        <ul>
+          {% for img in mars.marsHemisphereImgs %}
+          <li>
+            <img src={{img.img_url}} class='figure-img'>
+            <figcaption class="figure-caption">{{img.title}}</figcaption>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
   </div>
 </body>
 
 </html>
+
+<!--<img src={{mars.marsHemisphereImgs[0].img_url}}>-->
 
